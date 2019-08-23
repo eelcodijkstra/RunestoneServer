@@ -5,6 +5,12 @@ server {
     # Rewrite the path to static files.
     # root supplies the uptree path the match gets appended to the path specified
     # by the root directive
+    
+    # patch - EJD 23-8-2019 - for sql_wasm.wasm etc.
+    location  /_static/ {
+        root /srv/web2py/applications/runestone/books/db-y/build/db-test/;
+    }
+    
     location ~* /(\w+)/static/ {
         root /srv/web2py/applications/;
     }
